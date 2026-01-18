@@ -30,8 +30,9 @@ The extension follows Chrome Manifest V3 best practices and accesses **only the 
 
 
 ---
-##📜 **Permissions Explained**
 
--**activeTab** – Access only the currently open webpage when the user clicks
--**scripting** – Extract webpage text on demand
--**storage** – Save user API key locally
+## 📜 Permissions Explained
+
+- **activeTab** : Access only the currently open webpage when the user clicks
+- **scripting** : Extract webpage text on demand
+- **storage** : Save user API key locally
