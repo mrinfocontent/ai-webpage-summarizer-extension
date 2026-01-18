@@ -1,9 +1,7 @@
-No user tracking
+This extension does not collect or track any personal data.
 
-No analytics
+The OpenAI API key is provided by the user and stored locally using Chrome storage.
+The extension accesses webpage content only when the user clicks the Summarize button.
+Page content is sent to OpenAI solely for the purpose of generating a summary.
 
-No data collection
-
-API key stored locally using chrome.storage
-
-Page content is sent to OpenAI only on user request
+No data is sold, shared, or stored by the developer.
