@@ -1,31 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8" />
-  <title>AI Webpage Summarizer – Settings</title>
+  <meta charset="UTF-8">
+  <title>Settings</title>
 </head>
 
-<body style="font-family: Arial, sans-serif; max-width: 520px; padding: 20px;">
+<body style="font-family: Arial; max-width: 520px; padding: 20px;">
 
-  <h2>🔑 OpenAI API Key</h2>
+  <h2>AI Provider</h2>
 
-  <p style="font-size:14px; color:#555;">
-    Enter your OpenAI API key below.
-    It is stored locally on your device and never shared.
-  </p>
+  <label>
+    <input type="radio" name="provider" value="groq" checked>
+    Groq (Free – No Credit Card)
+  </label><br>
 
-  <input
-    type="password"
-    id="apiKey"
-    placeholder="sk-..."
-    style="width: 100%; padding: 8px; font-size: 14px;"
-  />
+  <label>
+    <input type="radio" name="provider" value="openai">
+    OpenAI
+  </label><br>
 
-  <br /><br />
+  <label>
+    <input type="radio" name="provider" value="gemini">
+    Gemini
+  </label>
 
-  <button id="save">Save API Key</button>
+  <hr>
 
-  <p id="status" style="margin-top:10px; font-size:13px;"></p>
+  <h3>Groq API Key</h3>
+  <input id="groqKey" type="password" style="width:100%;" placeholder="gsk_...">
+
+  <h3>OpenAI API Key</h3>
+  <input id="openaiKey" type="password" style="width:100%;" placeholder="sk-...">
+
+  <h3>Gemini API Key</h3>
+  <input id="geminiKey" type="password" style="width:100%;" placeholder="AIza...">
+
+  <br><br>
+  <button id="save">Save Settings</button>
+
+  <p id="status"></p>
 
   <script src="options.js"></script>
 </body>
