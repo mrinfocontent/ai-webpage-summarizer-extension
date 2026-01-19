@@ -1,39 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>AI Webpage Summarizer</title>
 </head>
 
-<body style="font-family: Arial, sans-serif; width: 320px; padding: 10px;">
+<body style="font-family: Arial; width: 320px; padding: 10px;">
 
-  <!-- User notice -->
-  <p style="font-size:12px; color:#555;">
-    ⚠️ This extension will read the content of the currently open webpage
-    <b>only when you click “Summarize Page”</b>.
-    The content is sent to OpenAI to generate a summary.
+  <p style="font-size:12px;">
+    This extension reads the current webpage
+    <b>only when you click Summarize</b>.
   </p>
 
-  <hr />
-
-  <!-- Summarize -->
   <button id="summarize" style="width:100%;">Summarize Page</button>
 
   <h4>Summary</h4>
-  <div id="summary" style="font-size: 13px;"></div>
+  <div id="summary" style="font-size:13px;"></div>
 
-  <hr />
+  <hr>
 
-  <!-- Reviewer Question -->
-  <h4>Ask Reviewer Question</h4>
-  <input
-    id="question"
-    placeholder="Ask about summary"
-    style="width: 100%;"
-  />
+  <h4>Ask a Question</h4>
+  <input id="question" placeholder="Ask about the summary" style="width:100%;">
   <button id="ask" style="width:100%;">Ask</button>
 
-  <div id="answer" style="font-size: 13px;"></div>
+  <div id="answer" style="font-size:13px;"></div>
 
   <script src="popup.js"></script>
 </body>
