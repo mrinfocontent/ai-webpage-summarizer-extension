@@ -1,32 +1,41 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const input = document.getElementById("apiKey");
-  const saveBtn = document.getElementById("save");
+  const keys = {
+    groqKey: document.getElementById("groqKey"),
+    openaiKey: document.getElementById("openaiKey"),
+    geminiKey: document.getElementById("geminiKey")
+  };
+
+  const radios = document.querySelectorAll("input[name='provider']");
   const status = document.getElementById("status");
 
-  // DEBUG: prove options.js is running
-  console.log("options.js loaded");
-
-  // Load saved key
-  chrome.storage.local.get("openaiKey", (result) => {
-    if (result.openaiKey) {
-      input.value = result.openaiKey;
+  chrome.storage.local.get(
+    ["provider", "groqKey", "openaiKey", "geminiKey"],
+    (d) => {
+      if (d.provider) {
+        document.querySelector(
+          `input[value="${d.provider}"]`
+        ).checked = true;
+      }
+      for (const k in keys) {
+        if (d[k]) keys[k].value = d[k];
+      }
     }
-  });
+  );
 
-  // Save key
-  saveBtn.addEventListener("click", () => {
-    const key = input.value.trim();
+  document.getElementById("save").addEventListener("click", () => {
+    const provider = [...radios].find(r => r.checked).value;
 
-    if (!key) {
-      status.style.color = "red";
-      status.textContent = "❌ API key cannot be empty";
-      return;
-    }
-
-    chrome.storage.local.set({ openaiKey: key }, () => {
-      status.style.color = "green";
-      status.textContent = "✅ API key saved successfully";
-      console.log("API key saved");
-    });
+    chrome.storage.local.set(
+      {
+        provider,
+        groqKey: keys.groqKey.value.trim(),
+        openaiKey: keys.openaiKey.value.trim(),
+        geminiKey: keys.geminiKey.value.trim()
+      },
+      () => {
+        status.textContent = "✅ Settings saved";
+        status.style.color = "green";
+      }
+    );
   });
 });
