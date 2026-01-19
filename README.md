@@ -1,28 +1,37 @@
 # AI Webpage Summarizer – Chrome Extension
 
-A Chrome extension that summarizes the **currently open webpage** and allows users to ask follow-up questions using their **own OpenAI API key**.
+A modern Chrome extension that summarizes the **currently open webpage** and allows users to **ask follow-up questions**, using their preferred AI provider.
 
-The extension follows Chrome Manifest V3 best practices and accesses **only the active tab on explicit user action**.
+Supported providers:
+- **Groq (FREE, no credit card required)** ⭐
+- OpenAI
+- Google Gemini
+
+The extension follows **Chrome Manifest V3 best practices** and accesses webpages **only on explicit user action**.
 
 ---
 
 ## ✨ Features
 
-- 🔍 Summarize the active webpage (Wikipedia, blogs, news sites, etc.)
-- ❓ Ask follow-up questions based on the summary
-- 🔑 Uses **user-provided OpenAI API key**
-- 🧠 No backend required
-- 🔒 API key stored securely using Chrome storage
+- 🔍 Summarize the active webpage (Wikipedia, blogs, news, docs, etc.)
+- ❓ Ask follow-up questions based on the generated summary
+- 🔁 Multiple AI providers supported:
+  - Groq (default, free)
+  - OpenAI
+  - Gemini
+- 🔑 User-provided API keys (no backend)
+- 🧠 No tracking or analytics
+- 🔒 API keys stored locally using Chrome storage
 - ✅ Manifest V3 compliant
-- 🚫 No background tracking
-- 🌐 Works only on user click (active tab only)
+- 🚫 No background scraping
+- 🌐 Active-tab only access
 
 ---
 
 ## 🧩 How It Works
 
 1. Install the extension and Pin the extension
-2. Right click the extension icon and open option page and give **Open AI  API key** as input and save it. 
+2. Right click the extension icon and open option page and give **API key** as input and save it. 
 3. Open a webpage you want to Summarizer and click on the extension icon and click **Summarize Page**
 4. Extension reads the **active tab**
 5. Content is sent to OpenAI
